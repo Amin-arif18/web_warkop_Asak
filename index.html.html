@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warkop Asak Cibiru — Kedai Kopi & Warmindo Buka 24 Jam di Bandung</title>
+  <meta name="description" content="Warkop Asak Cibiru Bandung buka 24 jam nonstop! Menyediakan Nasi Telur Kornet, Nasi Urak Arik, Magelangan, aneka olahan mie, dan minuman hangat/dingin ramah kantong mahasiswa mulai Rp 3.000." />
+  <meta name="keywords" content="Warkop Asak, Warkop Cibiru, Warmindo 24 Jam Bandung, Tempat Nongkrong UMB, Nasi Telur Kornet, Nasi Magelangan" />
+  <meta name="author" content="Tim Digital Marketing UMB - Warkop Asak" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            espresso: {
+              950: '#1C110A',
+              900: '#2A1A10',
+              800: '#3D2618',
+              700: '#543522',
+            },
+            amberwarm: {
+              400: '#FBBF24',
+              500: '#F59E0B',
+              600: '#D97706',
+            },
+            cream: {
+              50: '#FDFBF7',
+              100: '#F7F2E9',
+              200: '#EDE3D2',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Schema Markup JSON-LD: CafeOrCoffeeShop (Siap Validasi Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Warkop Asak",
+    "description": "Kedai kopi dan warmindo 24 jam di Cibiru, Bandung dengan menu andalan Nasi Telur Kornet, Nasi Urak Arik, Nasi Magelangan, serta aneka olahan mie dan minuman.",
+    "servesCuisine": ["Indonesian", "Warmindo", "Coffee & Beverages"],
+    "priceRange": "Rp 3.000 - Rp 12.000",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Pandanwangi Jl. Mekar Wangi III No.1, Cibiru Wetan, Kec. Cibiru",
+      "addressLocality": "Cibiru, Bandung",
+      "addressRegion": "Jawa Barat",
+      "addressCountry": "ID"
+    }
+  }
+  </script>
+</head>
+<body class="bg-cream-50 text-espresso-950 font-sans antialiased selection:bg-amberwarm-500 selection:text-white">
+
+  <!-- ==================== 1. STICKY NAVBAR ==================== -->
+  <header class="sticky top-0 z-40 bg-espresso-950/95 backdrop-blur-md text-cream-50 border-b border-espresso-800 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-xl bg-amberwarm-500 text-espresso-950 flex items-center justify-center font-display font-extrabold text-lg shadow-sm group-hover:scale-105 transition">
+          WA
+        </div>
+        <div>
+          <span class="font-display font-bold text-lg tracking-tight block leading-none">Warkop Asak</span>
+          <span class="text-[11px] text-amberwarm-400 font-medium">Buka 24 Jam • Cibiru</span>
+        </div>
+      </a>
+
+      <!-- Desktop Menu Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-cream-200">
+        <a href="#best-seller" class="hover:text-amberwarm-400 transition">Menu Andalan</a>
+        <a href="#daftar-menu" class="hover:text-amberwarm-400 transition">Daftar Menu</a>
+        <a href="#keunggulan" class="hover:text-amberwarm-400 transition">Keunggulan</a>
+        <a href="#lokasi" class="hover:text-amberwarm-400 transition">Lokasi & Jam</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2.5">
+        <!-- Cart Trigger Button -->
+        <button onclick="toggleCart(true)" class="relative p-2.5 rounded-xl bg-espresso-800 hover:bg-espresso-700 text-cream-50 transition flex items-center gap-2 text-sm font-semibold" aria-label="Buka Keranjang Pesanan">
+          <svg class="w-5 h-5 text-amberwarm-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+          <span class="hidden sm:inline">Pesanan</span>
+          <span id="nav-cart-badge" class="bg-amberwarm-500 text-espresso-950 text-xs font-extrabold px-2 py-0.5 rounded-full">0</span>
+        </button>
+
+        <!-- Direct WA CTA -->
+        <a href="#daftar-menu" class="bg-amberwarm-500 hover:bg-amberwarm-400 text-espresso-950 font-bold text-xs sm:text-sm px-3.5 sm:px-4 py-2.5 rounded-xl shadow transition">
+          Pesan via WA
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== 2. HERO SECTION ==================== -->
+    <section class="relative bg-gradient-to-br from-espresso-950 via-espresso-900 to-espresso-800 text-cream-50 overflow-hidden">
+      <!-- Decorative Pattern -->
+      <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#FBBF24 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20 lg:py-24 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- Left Text -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-espresso-800/90 border border-amberwarm-500/40 text-amberwarm-400 text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full shadow-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            BUKA 24 JAM NONSTOP • CIBIRU, BANDUNG
+          </div>
+
+          <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-[52px] leading-[1.15] tracking-tight">
+            Tempat Nongkrong &amp; Makan Hemat <span class="text-amberwarm-400">24 Jam</span> di Cibiru
+          </h1>
+
+          <p class="text-cream-200 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Lapar tengah malam setelah nugas atau butuh kopi hangat buat begadang? Nikmati racikan hangat <strong>Nasi Telur Kornet</strong>, <strong>Nasi Urak Arik</strong>, <strong>Magelangan</strong>, dan puluhan minuman mulai dari <strong>Rp 3.000</strong> saja!
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+            <button onclick="quickOrderWA('Halo Warkop Asak, saya mau tanya info menu & pesanan hari ini.')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-emerald-500 hover:bg-emerald-400 text-espresso-950 font-extrabold px-6 py-3.5 rounded-2xl shadow-lg shadow-emerald-950/40 transition text-sm sm:text-base">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+              Pesan Sekarang via WhatsApp
+            </button>
+            <a href="#daftar-menu" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-espresso-800 hover:bg-espresso-700 border border-espresso-700 text-cream-50 font-bold px-6 py-3.5 rounded-2xl transition text-sm sm:text-base">
+              Lihat Menu Lengkap
+            </a>
+          </div>
+
+          <!-- Quick Highlights -->
+          <div class="grid grid-cols-3 gap-4 pt-4 border-t border-espresso-800/80 text-left">
+            <div>
+              <p class="font-display font-extrabold text-xl sm:text-2xl text-amberwarm-400">24 Jam</p>
+              <p class="text-xs text-cream-200">Buka Setiap Hari</p>
+            </div>
+            <div>
+              <p class="font-display font-extrabold text-xl sm:text-2xl text-amberwarm-400">Rp 3rb</p>
+              <p class="text-xs text-cream-200">Minuman Mulai</p>
+            </div>
+            <div>
+              <p class="font-display font-extrabold text-xl sm:text-2xl text-amberwarm-400">45+ Menu</p>
+              <p class="text-xs text-cream-200">Makanan &amp; Kopi</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Card (Slot Foto Nyata Warkop Asak) -->
+        <div class="lg:col-span-5">
+          <div class="bg-espresso-800 border border-espresso-700 rounded-3xl p-4 sm:p-5 shadow-2xl">
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-espresso-900 flex items-center justify-center">
+              <!-- Ganti atribut src di bawah dengan foto asli Warkop Asak (format .webp untuk skor PageSpeed optimal) -->
+              <img 
+                src="warkopasak.webp" 
+                alt="Tampak Depan Warkop Asak Cibiru Wetan Buka 24 Jam" 
+                class="w-full h-72 md:h-96 object-cover rounded-2xl shadow-lg"
+              />
+              <div class="absolute bottom-3 left-3 right-3 bg-espresso-950/85 backdrop-blur-sm border border-espresso-700 rounded-xl p-3 flex items-center justify-between">
+                <div>
+                  <span class="text-[11px] uppercase tracking-wider text-amberwarm-400 font-bold block">Favorit Mahasiswa</span>
+                  <span class="font-display font-bold text-sm text-white">Nasi Telur Kornet + Es Teh</span>
+                </div>
+                <span class="bg-amberwarm-500 text-espresso-950 font-extrabold text-xs px-2.5 py-1 rounded-lg">
+                  Rp 16.000
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. BEST SELLER SHOWCASE ==================== -->
+    <section id="best-seller" class="py-14 sm:py-20 max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-amberwarm-600 bg-amberwarm-500/15 px-3 py-1 rounded-full">Paling Laris Dipesan</span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-espresso-950 mt-3">Menu Best Seller Warkop Asak</h2>
+        <p class="text-espresso-700 text-sm sm:text-base mt-2">Tiga menu andalan yang paling sering dipesan pelanggan setiap malam di Cibiru.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Best Seller 1 -->
+        <article class="bg-white rounded-3xl border border-cream-200 p-6 shadow-sm hover:shadow-xl transition flex flex-col justify-between relative overflow-hidden">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="bg-amberwarm-500 text-espresso-950 text-xs font-extrabold px-3 py-1 rounded-full tracking-wide">★ BEST SELLER #1</span>
+              <span class="text-xs font-semibold text-espresso-700">Nasi Telur</span>
+            </div>
+            <div class="w-full h-40 rounded-2xl bg-cream-100 mb-4 overflow-hidden flex items-center justify-center">
+              <img src="nasitelurkornet (1).webp" alt="Nasi Telur Kornet Warkop Asak" class="w-full h-full object-cover" />
+            </div>
+            <h3 class="font-display font-bold text-xl text-espresso-950">Nasi Telur Kornet</h3>
+            <p class="text-sm text-espresso-700 mt-1.5 leading-relaxed">Nasi putih hangat pulen disajikan dengan telur dadar/ceplok gurih dan tumisan kornet sapi melimpah.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-cream-200 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-espresso-700 block">Harga</span>
+              <span class="font-display font-extrabold text-xl text-espresso-950">Rp 12.000</span>
+            </div>
+            <button onclick="addToCart('Nasi Telur Kornet', 12000)" class="bg-espresso-950 hover:bg-amberwarm-500 text-white hover:text-espresso-950 font-bold text-sm px-4 py-2.5 rounded-xl transition cursor-pointer">
+              + Tambah
+            </button>
+          </div>
+        </article>
+
+        <!-- Best Seller 2 -->
+        <article class="bg-white rounded-3xl border border-cream-200 p-6 shadow-sm hover:shadow-xl transition flex flex-col justify-between relative overflow-hidden">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="bg-amberwarm-500 text-espresso-950 text-xs font-extrabold px-3 py-1 rounded-full tracking-wide">★ BEST SELLER #2</span>
+              <span class="text-xs font-semibold text-espresso-700">Nasi Telur</span>
+            </div>
+            <div class="w-full h-40 rounded-2xl bg-cream-100 mb-4 overflow-hidden flex items-center justify-center">
+              <img src="nasitelururakarik.webp" alt="Nasi Urak Arik Warkop Asak" class="w-full h-full object-cover" />
+            </div>
+            <h3 class="font-display font-bold text-xl text-espresso-950">Nasi Urak Arik</h3>
+            <p class="text-sm text-espresso-700 mt-1.5 leading-relaxed">Orak-arik telur berbumbu gurih pedas manis yang dimasak dadakan di atas nasi hangat. Praktis dan mengenyangkan.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-cream-200 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-espresso-700 block">Harga</span>
+              <span class="font-display font-extrabold text-xl text-espresso-950">Rp 11.000</span>
+            </div>
+            <button onclick="addToCart('Nasi Urak Arik', 11000)" class="bg-espresso-950 hover:bg-amberwarm-500 text-white hover:text-espresso-950 font-bold text-sm px-4 py-2.5 rounded-xl transition cursor-pointer">
+              + Tambah
+            </button>
+          </div>
+        </article>
+
+        <!-- Best Seller 3 -->
+        <article class="bg-white rounded-3xl border border-cream-200 p-6 shadow-sm hover:shadow-xl transition flex flex-col justify-between relative overflow-hidden">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="bg-amberwarm-500 text-espresso-950 text-xs font-extrabold px-3 py-1 rounded-full tracking-wide">★ BEST SELLER #3</span>
+              <span class="text-xs font-semibold text-espresso-700">Nasgor</span>
+            </div>
+            <div class="w-full h-40 rounded-2xl bg-cream-100 mb-4 overflow-hidden flex items-center justify-center">
+              <img src="nasi-goreng-magelangan.webp" alt="Nasi Magelangan Warkop Asak" class="w-full h-full object-cover" />
+            </div>
+            <h3 class="font-display font-bold text-xl text-espresso-950">Nasi Magelangan</h3>
+            <p class="text-sm text-espresso-700 mt-1.5 leading-relaxed">Perpaduan mantap nasi goreng dan mie goreng berbumbu khas warkop dengan porsi pas untuk pengganjal lapar malam.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-cream-200 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-espresso-700 block">Harga</span>
+              <span class="font-display font-extrabold text-xl text-espresso-950">Rp 12.000</span>
+            </div>
+            <button onclick="addToCart('Nasi Magelangan', 12000)" class="bg-espresso-950 hover:bg-amberwarm-500 text-white hover:text-espresso-950 font-bold text-sm px-4 py-2.5 rounded-xl transition cursor-pointer">
+              + Tambah
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 4. KATALOG MENU LENGKAP ==================== -->
+    <section id="daftar-menu" class="py-14 sm:py-20 bg-cream-100 border-y border-cream-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-amberwarm-600">Katalog Resmi Warkop Asak</span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-espresso-950 mt-1">Daftar Menu &amp; Harga Lengkap</h2>
+            <p class="text-espresso-700 text-sm sm:text-base mt-1">Klik tombol <strong>+ Tambah</strong> untuk menghitung total pesanan dan mengirim langsung ke WhatsApp.</p>
+          </div>
+
+          <!-- Search Box -->
+          <div class="w-full md:w-72">
+            <input 
+              type="text" 
+              id="menu-search" 
+              oninput="renderMenu()" 
+              placeholder="Cari menu (mis. Dok Dok, STMJ)..." 
+              class="w-full bg-white border border-cream-200 focus:border-amberwarm-500 focus:ring-2 focus:ring-amberwarm-500/20 rounded-xl px-4 py-2.5 text-sm outline-none transition"
+            />
+          </div>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap gap-2 mb-8" id="category-tabs">
+          <button onclick="setCategory('all')" data-cat="all" class="cat-btn active bg-espresso-950 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition">
+            Semua Menu
+          </button>
+          <button onclick="setCategory('mie')" data-cat="mie" class="cat-btn bg-white hover:bg-cream-200 text-espresso-900 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-cream-200 transition">
+            Olahan Mie &amp; Bubur
+          </button>
+          <button onclick="setCategory('nasi')" data-cat="nasi" class="cat-btn bg-white hover:bg-cream-200 text-espresso-900 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-cream-200 transition">
+            Nasi &amp; Extra Lauk
+          </button>
+          <button onclick="setCategory('panas')" data-cat="panas" class="cat-btn bg-white hover:bg-cream-200 text-espresso-900 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-cream-200 transition">
+            Minuman Panas
+          </button>
+          <button onclick="setCategory('dingin')" data-cat="dingin" class="cat-btn bg-white hover:bg-cream-200 text-espresso-900 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-cream-200 transition">
+            Minuman Dingin
+          </button>
+        </div>
+
+        <!-- Menu Grid Container -->
+        <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Diisi otomatis oleh JavaScript dari array data menu resmi -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. KEUNGGULAN WARKOP ASAK ==================== -->
+    <section id="keunggulan" class="py-14 sm:py-20 max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-espresso-950">Kenapa Nongkrong di Warkop Asak?</h2>
+        <p class="text-espresso-700 text-sm sm:text-base mt-2">Dirancang untuk kenyamanan mahasiswa dan warga sekitar Cibiru kapan pun dibutuhkan.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-white p-6 rounded-3xl border border-cream-200 shadow-sm">
+          <div class="w-11 h-11 rounded-2xl bg-amberwarm-500/15 text-amberwarm-600 flex items-center justify-center font-extrabold text-lg mb-4">24H</div>
+          <h3 class="font-display font-bold text-lg text-espresso-950">Buka 24 Jam Nonstop</h3>
+          <p class="text-sm text-espresso-700 mt-1.5">Pagi, sore, hingga dini hari siap melayani tanpa khawatir kehabisan tempat makan.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-3xl border border-cream-200 shadow-sm">
+          <div class="w-11 h-11 rounded-2xl bg-emerald-500/15 text-emerald-700 flex items-center justify-center font-extrabold text-lg mb-4">Rp</div>
+          <h3 class="font-display font-bold text-lg text-espresso-950">Harga Ramah Kantong</h3>
+          <p class="text-sm text-espresso-700 mt-1.5">Minuman mulai Rp 3.000 dan paket kenyang nasi telur mulai Rp 8.000 – Rp 12.000.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-3xl border border-cream-200 shadow-sm">
+          <div class="w-11 h-11 rounded-2xl bg-orange-500/15 text-orange-600 flex items-center justify-center font-extrabold text-lg mb-4">🔥</div>
+          <h3 class="font-display font-bold text-lg text-espresso-950">Dimasak Dadakan</h3>
+          <p class="text-sm text-espresso-700 mt-1.5">Setiap porsi mie dok-dok, magelangan, dan nasi urak arik disajikan panas langsung dari wajan.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-3xl border border-cream-200 shadow-sm">
+          <div class="w-11 h-11 rounded-2xl bg-blue-500/15 text-blue-700 flex items-center justify-center font-extrabold text-lg mb-4">📍</div>
+          <h3 class="font-display font-bold text-lg text-espresso-950">Strategis di Cibiru</h3>
+          <p class="text-sm text-espresso-700 mt-1.5">Mudah dijangkau dari area kampus UMB dan pemukiman sekitar Cibiru, Bandung.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. LOKASI & JAM OPERASIONAL ==================== -->
+    <section id="lokasi" class="py-14 sm:py-20 bg-espresso-950 text-cream-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 space-y-5">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-amberwarm-400">Kunjungi Kami</span>
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl">Lokasi &amp; Jam Operasional</h2>
+          <p class="text-cream-200 text-sm sm:text-base leading-relaxed">
+            Mampir langsung bersama teman-teman atau pesan lebih dulu lewat WhatsApp agar pesanan siap saat kamu tiba.
+          </p>
+
+          <div class="space-y-4 pt-2 text-sm">
+            <div class="bg-espresso-900 border border-espresso-800 p-4 rounded-2xl">
+              <span class="text-amberwarm-400 font-bold block mb-1">Alamat Lengkap:</span>
+              <p class="text-cream-100">Jl. Pandanwangi Jl. Mekar Wangi III No.1, Cibiru Wetan, Kec. Cibiru, Kabupaten Bandung, Jawa Barat 40614</p>
+            </div>
+
+            <div class="bg-espresso-900 border border-espresso-800 p-4 rounded-2xl">
+              <span class="text-amberwarm-400 font-bold block mb-1">Jam Buka:</span>
+              <p class="text-cream-100">Senin – Minggu: <strong>24 Jam Nonstop</strong></p>
+            </div>
+
+            <div class="bg-espresso-900 border border-espresso-800 p-4 rounded-2xl">
+              <span class="text-amberwarm-400 font-bold block mb-1">Kontak &amp; Pemesanan WhatsApp:</span>
+              <p class="text-cream-100">+62 822-9538-9589</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Maps Embed Placeholder -->
+        <div class="lg:col-span-7">
+          <div class="bg-espresso-900 border border-espresso-800 rounded-3xl p-4 sm:p-5">
+            <div class="w-full h-72 sm:h-80 rounded-2xl overflow-hidden border border-espresso-700">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5514863724266!2d107.7234287758764!3d-6.944080967980916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c3229c9aeb19%3A0xdca5ac1120c4825e!2sJl.%20Pandanwangi%20No.1%2C%20Cinunuk%2C%20Kec.%20Cileunyi%2C%20Kabupaten%20Bandung%2C%20Jawa%20Barat%2040624!5e0!3m2!1sid!2sid!4v1795523166657!5m2!1sid!2sid" 
+                class="w-full h-full border-0" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="strict-origin-when-cross-origin"
+                title="Lokasi Google Maps Warkop Asak Cibiru">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 7. FOOTER ==================== -->
+  <footer class="bg-espresso-950 border-t border-espresso-900 text-cream-200 py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm">
+      <div>
+        <strong class="text-white">Warkop Asak Cibiru</strong> — Kedai Kopi &amp; Warmindo 24 Jam.
+      </div>
+      <div class="text-cream-200/70">
+        Prototipe Digital Marketing Capstone Project • Teknik Informatika UMB
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING CART BAR (MOBILE & DESKTOP) ==================== -->
+  <div id="floating-cart-bar" class="hidden fixed bottom-4 left-4 right-4 z-30 max-w-xl mx-auto">
+    <button onclick="toggleCart(true)" class="w-full bg-amberwarm-500 hover:bg-amberwarm-400 text-espresso-950 font-extrabold px-5 py-3.5 rounded-2xl shadow-2xl flex items-center justify-between transition">
+      <div class="flex items-center gap-2.5">
+        <span id="float-count" class="bg-espresso-950 text-white text-xs px-2.5 py-1 rounded-lg">0 Item</span>
+        <span class="text-sm">Lihat Ringkasan Pesanan</span>
+      </div>
+      <span id="float-total" class="font-display text-base">Rp 0</span>
+    </button>
+  </div>
+
+  <!-- ==================== SLIDE-OVER CART DRAWER ==================== -->
+  <div id="cart-modal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex justify-end">
+    <div class="bg-white w-full max-w-md h-full flex flex-col justify-between shadow-2xl">
+      <!-- Drawer Header -->
+      <div class="p-5 border-b border-cream-200 flex items-center justify-between bg-cream-50">
+        <div>
+          <h3 class="font-display font-extrabold text-lg text-espresso-950">Keranjang Pesanan</h3>
+          <p class="text-xs text-espresso-700">Hitung total &amp; kirim otomatis ke WhatsApp Warkop Asak</p>
+        </div>
+        <button onclick="toggleCart(false)" class="p-2 rounded-xl bg-cream-200 hover:bg-espresso-950 hover:text-white transition text-sm font-bold">
+          ✕
+        </button>
+      </div>
+
+      <!-- Cart Items List -->
+      <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 space-y-3">
+        <!-- Diisi otomatis lewat JS -->
+      </div>
+
+      <!-- Checkout Form -->
+      <div class="p-5 border-t border-cream-200 bg-cream-50 space-y-3">
+        <div class="flex items-center justify-between text-sm font-bold text-espresso-950">
+          <span>Estimasi Total</span>
+          <span id="drawer-total" class="font-display text-xl text-amberwarm-600">Rp 0</span>
+        </div>
+
+        <input type="text" id="customer-name" placeholder="Nama Pemesan (wajib diisi)" class="w-full bg-white border border-cream-200 rounded-xl px-3.5 py-2.5 text-sm outline-none focus:border-amberwarm-500" />
+        <input type="text" id="customer-note" placeholder="Catatan (mis. Pedas sedang / Bungkus / Makan di tempat)" class="w-full bg-white border border-cream-200 rounded-xl px-3.5 py-2.5 text-sm outline-none focus:border-amberwarm-500" />
+
+        <div id="cart-alert" class="hidden text-xs text-red-600 font-semibold"></div>
+
+        <button onclick="checkoutWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-3 rounded-xl shadow transition flex items-center justify-center gap-2 text-sm">
+          Kirim Pesanan ke WhatsApp
+        </button>
+        <p class="text-[11px] text-center text-espresso-700">
+          *Nomor WA tujuan saat ini menggunakan nomor simulasi (ganti di kode JS dengan nomor asli mitra).
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const WHATSAPP_NUMBER = "6282295389589";
+
+    const MENU_ITEMS = [
+      // Olahan Mie
+      { name: "Mie Goreng Telur", price: 10000, cat: "mie", sub: "Olahan Mie", best: false },
+      { name: "Mie Goreng Tante", price: 7000, cat: "mie", sub: "Olahan Mie", best: false },
+      { name: "Mie Rebus Telur", price: 10000, cat: "mie", sub: "Olahan Mie", best: false },
+      { name: "Mie Rebus Tante", price: 7000, cat: "mie", sub: "Olahan Mie", best: false },
+      { name: "Mie Dok Dok", price: 11000, cat: "mie", sub: "Olahan Mie", best: false },
+      { name: "Mie Tek Tek", price: 12000, cat: "mie", sub: "Olahan Mie", best: false },
+      // Bubur
+      { name: "Bubur Kacang", price: 0, priceLabel: "Tanya Harga", cat: "mie", sub: "Bubur", best: false },
+      { name: "Bubur Ketan", price: 0, priceLabel: "Tanya Harga", cat: "mie", sub: "Bubur", best: false },
+
+      // Nasi Telur & Nasgor
+      { name: "Nasi Telur", price: 8000, cat: "nasi", sub: "Nasi Telur", best: false },
+      { name: "Nasi Telur Kornet", price: 12000, cat: "nasi", sub: "Nasi Telur", best: true },
+      { name: "Nasi Telur Sarden", price: 12000, cat: "nasi", sub: "Nasi Telur", best: false },
+      { name: "Nasi Telur Sosis", price: 12000, cat: "nasi", sub: "Nasi Telur", best: false },
+      { name: "Nasi Urak Arik", price: 11000, cat: "nasi", sub: "Nasi Telur", best: true },
+      { name: "Nasi Goreng", price: 11000, cat: "nasi", sub: "Nasgor", best: false },
+      { name: "Nasi Magelangan", price: 12000, cat: "nasi", sub: "Nasgor", best: true },
+
+      // Extra Tambahan Lauk
+      { name: "Extra Nasi 1 Porsi", price: 5000, cat: "nasi", sub: "Extra Lauk", best: false },
+      { name: "Extra Nasi 1/2 Porsi", price: 3000, cat: "nasi", sub: "Extra Lauk", best: false },
+      { name: "Extra Kornet", price: 4000, cat: "nasi", sub: "Extra Lauk", best: false },
+      { name: "Extra Sarden", price: 4000, cat: "nasi", sub: "Extra Lauk", best: false },
+      { name: "Extra Sosis", price: 2000, cat: "nasi", sub: "Extra Lauk", best: false },
+      { name: "Extra Nugget", price: 2000, cat: "nasi", sub: "Extra Lauk", best: false },
+      { name: "Extra Dadar / Ceplok", price: 4000, cat: "nasi", sub: "Extra Lauk", best: false },
+      { name: "Extra Telur Urak Arik", price: 6000, cat: "nasi", sub: "Extra Lauk", best: false },
+
+      // Minuman Panas
+      { name: "Kopi Hitam", price: 4000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "Indocafe", price: 4000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "Good Day Merah", price: 4000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "Good Day Cappuccino", price: 5000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "White Coffee", price: 4000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "ABC Susu", price: 4000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "Milo Panas", price: 4000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "Teh Tarik Panas", price: 4000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "Teh Susu Panas", price: 4000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "Teh Manis Panas", price: 3000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "Lemon Tea Panas", price: 4000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "Susu Putih Panas", price: 4000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "Susu Coklat Panas", price: 4000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "Susu Jahe", price: 4000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "STMJ", price: 4000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "Jahe Merah", price: 4000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "Dancow Panas", price: 5000, cat: "panas", sub: "Minuman Panas", best: false },
+      { name: "Jeruk Panas", price: 4000, cat: "panas", sub: "Minuman Panas", best: false },
+
+      // Minuman Dingin
+      { name: "Es Teh Manis", price: 4000, cat: "dingin", sub: "Minuman Dingin", best: false },
+      { name: "Es Teh Susu", price: 6000, cat: "dingin", sub: "Minuman Dingin", best: false },
+      { name: "Es Teh Tarik", price: 6000, cat: "dingin", sub: "Minuman Dingin", best: false },
+      { name: "Es Jeruk", price: 5000, cat: "dingin", sub: "Minuman Dingin", best: false },
+      { name: "Es Good Day Freeze", price: 6000, cat: "dingin", sub: "Minuman Dingin", best: false },
+      { name: "Es Good Day Cappuccino", price: 6000, cat: "dingin", sub: "Minuman Dingin", best: false },
+      { name: "Es ABC Klepon", price: 6000, cat: "dingin", sub: "Minuman Dingin", best: false },
+      { name: "Es Dancow", price: 6000, cat: "dingin", sub: "Minuman Dingin", best: false },
+      { name: "Es Creamy Latte", price: 6000, cat: "dingin", sub: "Minuman Dingin", best: false },
+      { name: "Es Susu Putih", price: 6000, cat: "dingin", sub: "Minuman Dingin", best: false },
+      { name: "Es Susu Coklat", price: 6000, cat: "dingin", sub: "Minuman Dingin", best: false },
+      { name: "Es Lemon Tea", price: 5000, cat: "dingin", sub: "Minuman Dingin", best: false },
+      { name: "Es Nutrisari", price: 4000, cat: "dingin", sub: "Minuman Dingin", best: false },
+      { name: "Extra Joss Susu", price: 6000, cat: "dingin", sub: "Minuman Dingin", best: false },
+      { name: "Kukubima Susu", price: 6000, cat: "dingin", sub: "Minuman Dingin", best: false }
+    ];
+
+    let activeCategory = "all";
+    let cart = [];
+
+    function formatRupiah(num) {
+      return "Rp " + num.toLocaleString("id-ID");
+    }
+
+    function setCategory(cat) {
+      activeCategory = cat;
+      document.querySelectorAll(".cat-btn").forEach(btn => {
+        if (btn.dataset.cat === cat) {
+          btn.className = "cat-btn active bg-espresso-950 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition";
+        } else {
+          btn.className = "cat-btn bg-white hover:bg-cream-200 text-espresso-900 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-cream-200 transition";
+        }
+      });
+      renderMenu();
+    }
+
+    function renderMenu() {
+      const grid = document.getElementById("menu-grid");
+      const query = document.getElementById("menu-search").value.toLowerCase().trim();
+
+      const filtered = MENU_ITEMS.filter(item => {
+        const matchCat = activeCategory === "all" || item.cat === activeCategory;
+        const matchQuery = item.name.toLowerCase().includes(query) || item.sub.toLowerCase().includes(query);
+        return matchCat && matchQuery;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="col-span-full text-center py-10 text-espresso-700 text-sm">Menu tidak ditemukan. Coba kata kunci lain.</div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => {
+        const priceDisplay = item.price > 0 ? formatRupiah(item.price) : item.priceLabel;
+        const bestBadge = item.best
+          ? `<span class="bg-amberwarm-500 text-espresso-950 text-[10px] font-extrabold px-2 py-0.5 rounded-md ml-1.5">BEST SELLER</span>`
+          : "";
+
+        return `
+          <div class="bg-white rounded-2xl border border-cream-200 p-4 flex items-center justify-between gap-3 hover:border-amberwarm-500 transition shadow-2xs">
+            <div>
+              <span class="text-[11px] font-semibold text-espresso-700 block">${item.sub}</span>
+              <h3 class="font-display font-bold text-base text-espresso-950 leading-snug">${item.name} ${bestBadge}</h3>
+              <span class="font-bold text-sm text-amberwarm-600 mt-1 block">${priceDisplay}</span>
+            </div>
+            <button 
+              onclick="addToCart('${item.name.replace(/'/g, "\\'")}', ${item.price})" 
+              class="shrink-0 bg-cream-100 hover:bg-espresso-950 text-espresso-950 hover:text-white font-bold text-xs px-3.5 py-2.5 rounded-xl border border-cream-200 transition cursor-pointer">
+              + Tambah
+            </button>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function addToCart(name, price) {
+      const existing = cart.find(i => i.name === name);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+      updateCartUI();
+    }
+
+    function changeQty(index, delta) {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      document.getElementById("nav-cart-badge").textContent = totalItems;
+      document.getElementById("float-count").textContent = `${totalItems} Item`;
+      document.getElementById("float-total").textContent = formatRupiah(totalPrice);
+      document.getElementById("drawer-total").textContent = formatRupiah(totalPrice);
+
+      const floatBar = document.getElementById("floating-cart-bar");
+      if (totalItems > 0) {
+        floatBar.classList.remove("hidden");
+      } else {
+        floatBar.classList.add("hidden");
+      }
+
+      const container = document.getElementById("cart-items-container");
+      if (cart.length === 0) {
+        container.innerHTML = `<div class="text-center text-sm text-espresso-700 py-12">Belum ada menu yang dipilih. Silakan klik <strong>+ Tambah</strong> pada daftar menu.</div>`;
+        return;
+      }
+
+      container.innerHTML = cart.map((item, idx) => `
+        <div class="flex items-center justify-between bg-cream-50 border border-cream-200 p-3 rounded-xl">
+          <div>
+            <p class="font-bold text-sm text-espresso-950">${item.name}</p>
+            <p class="text-xs text-espresso-700">${item.price > 0 ? formatRupiah(item.price) : 'Tanya Harga'} x ${item.qty}</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="changeQty(${idx}, -1)" class="w-7 h-7 rounded-lg bg-white border border-cream-200 font-bold text-sm hover:bg-cream-200">-</button>
+            <span class="text-sm font-bold w-5 text-center">${item.qty}</span>
+            <button onclick="changeQty(${idx}, 1)" class="w-7 h-7 rounded-lg bg-espresso-950 text-white font-bold text-sm hover:bg-espresso-800">+</button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function toggleCart(open) {
+      const modal = document.getElementById("cart-modal");
+      if (open) {
+        modal.classList.remove("hidden");
+      } else {
+        modal.classList.add("hidden");
+      }
+    }
+
+    function quickOrderWA(msg) {
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    function checkoutWhatsApp() {
+      const alertBox = document.getElementById("cart-alert");
+      const name = document.getElementById("customer-name").value.trim();
+      const note = document.getElementById("customer-note").value.trim();
+
+      if (cart.length === 0) {
+        alertBox.textContent = "Pilih minimal 1 menu terlebih dahulu.";
+        alertBox.classList.remove("hidden");
+        return;
+      }
+      if (!name) {
+        alertBox.textContent = "Mohon isi nama pemesan terlebih dahulu.";
+        alertBox.classList.remove("hidden");
+        return;
+      }
+      alertBox.classList.add("hidden");
+
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const itemLines = cart.map((item, i) => `${i + 1}. ${item.name} (${item.qty}x) - ${item.price > 0 ? formatRupiah(item.price * item.qty) : 'Tanya Harga'}`).join("\n");
+
+      const message =
+        `Halo *Warkop Asak*, saya mau pesan:\n\n` +
+        `*Nama:* ${name}\n` +
+        `*Daftar Pesanan:*\n${itemLines}\n\n` +
+        `*Estimasi Total:* ${formatRupiah(totalPrice)}\n` +
+        `*Catatan:* ${note || '-'}\n\n` +
+        `Terima kasih!`;
+
+      quickOrderWA(message);
+    }
+
+    // Inisialisasi awal saat halaman dibuka
+    window.addEventListener("DOMContentLoaded", () => {
+      renderMenu();
+      updateCartUI();
+    });
+  </script>
+</body>
+</html>
